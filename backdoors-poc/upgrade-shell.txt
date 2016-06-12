@@ -1,0 +1,17 @@
+######################################
+# Python
+######################################
+
+# Upgrades a raw shell to a bash shell
+python -c "import pty;pty.spawn("/bin/bash")"
+
+######################################
+# Metasploit
+######################################
+
+# In msfconsole, upgrades a raw shell to a meterpreter
+sessions -u <session id>
+
+# In meterpreter, opens a new channel with cmd.exe or /bin/bash, useful when "shell" command doesn't work
+execute -f cmd.exe -i -H
+execute -f /bin/bash -i -H

